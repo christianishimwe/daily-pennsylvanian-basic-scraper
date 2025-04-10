@@ -1,5 +1,5 @@
 """
-Scrapes a headline from The Daily Pennsylvanian website and saves it to a 
+Scrapes a headline from The Daily Pennsylvanian website and saves it to a
 JSON file that tracks headlines over time.
 """
 
@@ -19,13 +19,25 @@ def scrape_data_point():
 
     Returns:
         str: The headline text if found, otherwise an empty string.
+
     """
-    req = requests.get("https://www.thedp.com")
+
+    ### ADDED THIS SINCE DP THOUGHT I WAS A BOT####
+    headers = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/122.0.0.0 Safari/537.36"
+    )
+    }   
+    req = requests.get("https://www.thedp.com", headers=headers)
+
     loguru.logger.info(f"Request URL: {req.url}")
     loguru.logger.info(f"Request status code: {req.status_code}")
 
     if req.ok:
         soup = bs4.BeautifulSoup(req.text, "html.parser")
+
         target_element = soup.find("a", class_="frontpage-link")
         data_point = "" if target_element is None else target_element.text
         loguru.logger.info(f"Data point: {data_point}")
