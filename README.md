@@ -134,4 +134,4 @@ But it is important to use it responsibly and ethically. Here are some guideline
 
 9. Document your scraping process thoroughly for replicability, transparency and accountability.
 
-10. Continuously re-evaluate your scraping program against applicable laws and ethical principles.
+10. Continuously re-evaluate your scraping program against applicable laws and ethical 
