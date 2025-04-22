@@ -30,6 +30,10 @@ This once-daily scraping is a good rule-of-thumb, as it is generally respectful 
 
 You can use [crontab.guru](https://crontab.guru/) to generate your own cron schedule.
 
+## Schedule Explanation
+
+The cron expression `0 20 * * *` in our GitHub Actions workflow file (`scrape.yaml`) is used to schedule the scraper to run automatically at a specific time. This expression is composed of five fields: minute, hour, day of month, month, and day of week. Specifically, `0 20 * * *` means that the job is scheduled to run every day at 20:00 UTC (8:00 PM UTC). Each field in the cron expression represents a time unit, allowing for precise scheduling of automated tasks. For more details on cron syntax, tools like crontab.guru can be helpful.
+
 ## Python Libraries
 
 The main libraries used are:
