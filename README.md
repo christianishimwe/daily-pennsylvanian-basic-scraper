@@ -54,6 +54,8 @@ To adapt this for your own scraping project:
 - Add any additional libraries to `Pipfile` that you need
 - Update this `README.md` with project specifics
 
+**Recent Update**: The script now targets the news section of The Daily Pennsylvanian website by scraping from `https://www.thedp.com/section/news` instead of the main page. This change allows for more focused data extraction from the news section.
+
 Feel free to use this as a starter kit for your Python web scraping projects!
 
 ## Setting Up a Local Development

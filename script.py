@@ -15,7 +15,7 @@ import loguru
 
 def scrape_data_point():
     """
-    Scrapes the main headline from The Daily Pennsylvanian home page.
+    Scrapes the main headline from The Daily Pennsylvanian news section.
 
     Returns:
         str: The headline text if found, otherwise an empty string.
@@ -29,8 +29,11 @@ def scrape_data_point():
         "AppleWebKit/537.36 (KHTML, like Gecko) "
         "Chrome/122.0.0.0 Safari/537.36"
     )
-    }   
-    req = requests.get("https://www.thedp.com", headers=headers)
+    } 
+    # PAST URL THAT WAS BEING SCRAPED
+    #req = requests.get("https://www.thedp.com", headers=headers)
+    # NEW URL THAT IS BEING SCRAPED
+    req = requests.get("https://www.thedp.com/section/news", headers=headers)
 
     loguru.logger.info(f"Request URL: {req.url}")
     loguru.logger.info(f"Request status code: {req.status_code}")
@@ -38,7 +41,7 @@ def scrape_data_point():
     if req.ok:
         soup = bs4.BeautifulSoup(req.text, "html.parser")
 
-        target_element = soup.find("a", class_="frontpage-link")
+        target_element = soup.find("h3", class_="standard-link").find("a").text 
         data_point = "" if target_element is None else target_element.text
         loguru.logger.info(f"Data point: {data_point}")
         return data_point
