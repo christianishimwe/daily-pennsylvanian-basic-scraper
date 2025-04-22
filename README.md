@@ -50,7 +50,7 @@ To adapt this for your own scraping project:
   - Parsing the HTML with BeautifulSoup to extract relevant data
   - Processing and outputting the scraped data as CSV, JSON etc
 - Update the workflow schedule as needed
-- Output and commit the scraped data to CSV, JSON or other formats
+- Output and commit the scraped data to CSV, JSON or other format
 - Add any additional libraries to `Pipfile` that you need
 - Update this `README.md` with project specifics
 
