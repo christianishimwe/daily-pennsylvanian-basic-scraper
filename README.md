@@ -24,9 +24,10 @@ The workflow defined in `.github/workflows/scrape.yaml` runs on a defined schedu
 
 The workflow schedule is configured with [cron syntax](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule) to run:
 
-- Every day at 8PM UTC
+- Every day at 8AM UTC
+- Every day at 7PM UTC
 
-This once-daily scraping is a good rule-of-thumb, as it is generally respectful of the target website, as it does not contribute to any measurable burden to the site's resources.
+This twice-daily scraping schedule is generally respectful of the target website, as it does not contribute to any measurable burden to the site's resources.
 
 You can use [crontab.guru](https://crontab.guru/) to generate your own cron schedule.
 
@@ -58,7 +59,8 @@ To adapt this for your own scraping project:
 - Add any additional libraries to `Pipfile` that you need
 - Update this `README.md` with project specifics
 
-**Recent Update**: The script now targets the news section of The Daily Pennsylvanian website by scraping from `https://www.thedp.com/section/news` instead of the main page. This change allows for more focused data extraction from the news section.
+**Recent Update**: 
+The script now targets the news section of The Daily Pennsylvanian website by scraping from `https://www.thedp.com/section/news` instead of the main page. This change allows for more focused data extraction from the news section.
 
 Feel free to use this as a starter kit for your Python web scraping projects!
 
